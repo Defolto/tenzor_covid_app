@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h1>{% block title %}Личный кабинет{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    Логин: {{ g.current_user.login }}
+{% endblock %}

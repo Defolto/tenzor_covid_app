@@ -1,0 +1,25 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Covid-Трекер</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <h1>Covid-Трекер</h1>
+  <ul>
+    {% if g.current_user %}
+      <li><span>{{ g.current_user.login }}</span>
+      <li><a href="{{ url_for('user.user_page') }}">Личный кабинет</a>
+      <li><a href="{{ url_for('auth.logout') }}">Выйти</a>
+    {% else %}
+      <li><a href="{{ url_for('auth.register') }}">Зарегистрироваться</a>
+      <li><a href="{{ url_for('auth.login') }}">Войти</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
