@@ -1,0 +1,97 @@
+@font-face{
+    font-family: Roboto;
+    src: url(../fonts/RobotoSlab-VariableFont_wght.ttf);
+}
+
+@font-face{
+    font-family: Exo;
+    src: url(../fonts/Exo2-VariableFont_wght.ttf);
+}
+
+.app{
+    display: flex;
+    flex-direction: row;
+}
+
+.map{
+    position: relative;
+    width: 70%;
+
+    &__Russia{
+        width: 100%;
+    }
+
+    svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        .part{
+            opacity: .1;
+            transition: .5s;
+            cursor: pointer;
+        }
+        
+        .part:hover{
+            opacity: .5;
+        }
+    }
+}
+
+.info{
+    background-color: #0988cc;
+    width: 30%;
+    padding: 20px 10px;
+    border-radius: 65px 0 0 65px;
+    color: white;
+
+    &__title{
+        text-align: center;
+        font-family: Roboto;
+        font-weight: normal;
+        font-size: 40px;
+        margin: 0;
+    }
+
+    &__sick{
+        font-family: Exo;
+        text-align: center;
+        font-size: 35px;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 65px;
+    }
+
+    &-row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &-col{
+        font-family: Exo;
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+
+    &-ico{
+        width: 60%;
+        margin: 0 auto;
+
+        & + p{
+            font-size: 30px;
+            text-align: center;
+            margin: 0;
+            padding-top: 7px;
+        }
+    }
+
+    &-count{
+        text-align: center;
+        font-size: 35px;
+        margin: 0;
+
+    }
+}
